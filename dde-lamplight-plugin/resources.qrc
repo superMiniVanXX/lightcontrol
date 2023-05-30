@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/icons/deepin/builtin/">
+        <file>icons/actions/dcc_power_light_32px.svg</file>
+    </qresource>
+</RCC>

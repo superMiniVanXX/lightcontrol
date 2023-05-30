@@ -1,0 +1,26 @@
+Source: dde-joys-core
+Section: lib
+Priority: optional
+Maintainer: donghualin <donghualin@uniontech.com>
+Build-Depends: debhelper-compat (= 12),
+               cmake,
+               libdframeworkdbus-dev (>= 1.0.2),
+               pkg-config,
+               qtbase5-dev,
+               qtbase5-private-dev,
+               qttools5-dev-tools,
+               libgtest-dev,
+               libdtkwidget-dev,
+               dde-control-center-dev,
+               libudev-dev,
+               qttools5-dev
+Rules-Requires-Root: no
+Standards-Version: 4.5.0
+Homepage: https://gerrit.uniontech.com/admin/repos/dde-network-core
+Vcs-Browser: https://gerrit.uniontech.com/admin/repos/dde-network-core
+
+Package: dde-lamplight-plugin
+Architecture: any
+Depends: ${misc:Depends},${shlibs:Depends}
+Description: the plugin of network for dde control center
+ dcc-network-plugin module
