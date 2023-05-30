@@ -20,11 +20,9 @@ LampLightModule::LampLightModule()
     // 如果模块不存在，插件设置为不可用
     m_isModuleAvaliable = m_model->isDeviceAvaliable();
 
-    m_workThread = new QThread(this);
     connect(m_model, &QObject::destroyed, this, [this] {
         m_model = nullptr;
     });
-    m_model->moveToThread(m_workThread);
 }
 
 LampLightModule::~LampLightModule()
@@ -33,6 +31,13 @@ LampLightModule::~LampLightModule()
 
 void LampLightModule::initialize()
 {
+    if (!m_workThread) {
+        m_workThread = new QThread(this);
+        connect(m_workThread, &QObject::destroyed, this, [this] {
+            m_workThread = nullptr;
+        });
+        m_model->moveToThread(m_workThread);
+    }
 }
 
 void LampLightModule::active()

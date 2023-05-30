@@ -32,7 +32,6 @@ Q_SIGNALS:
 
 private:
     QProcess *m_process;
-    bool m_currentState;
     QMap<OpType, QString> m_opMap;
 };
 

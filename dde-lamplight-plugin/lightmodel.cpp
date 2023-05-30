@@ -8,7 +8,6 @@ const QString ILSTCmd = "/usr/bin/ilst";
 LightModel::LightModel(QObject *parent)
     : QObject(parent)
     , m_process(nullptr)
-    , m_currentState(false)
 {
     m_opMap.insert(OpType::GET_AVALIABLE, "-p");
     m_opMap.insert(OpType::GET_STATUS, "-r");
@@ -69,6 +68,7 @@ bool LightModel::isDeviceAvaliable()
     response = response.trimmed().toLower();
     isAvaliable = response == "true";
 
+    // todo :
     // return isAvaliable;
     return true;
 }
